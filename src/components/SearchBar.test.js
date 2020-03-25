@@ -8,4 +8,12 @@ describe("SearchBar", () => {
     const wrapper = shallow(<SearchBar />);
     expect(wrapper.exists()).toBe(true);
   });
+
+  it("ensure user text is echoed", () => {
+    const wrapper = shallow(<SearchBar userSearchTerm={() => {}} />);
+    wrapper.find("input").simulate("change", {
+      target: { value: "hello" }
+    });
+    expect(wrapper.find("input").props().value).toEqual("hello");
+  });
 });
