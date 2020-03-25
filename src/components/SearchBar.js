@@ -7,18 +7,24 @@ class SearchBar extends React.Component {
     this.setState({ userSearch: event.target.value });
   };
 
-  formSubmitted = event => {
+  userSearchSubmit = event => {
     event.preventDefault();
+
+    // this.props.userSearchSubmit(this.state.userSearch);
   };
 
   render() {
     return (
       <div className="container">
         <div className="form container">
-          <form onSubmit={this.formSubmitted}>
+          <form onSubmit={this.userSearchSubmit}>
             <div className="field"></div>
             <label>Enter Your Search</label>
-            <input onChange={this.userSearchTerm} type="text" />
+            <input
+              type="text"
+              value={this.state.userSearch}
+              onChange={this.userSearchTerm}
+            />
           </form>
         </div>
       </div>
