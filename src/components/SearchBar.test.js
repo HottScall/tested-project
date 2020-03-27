@@ -16,4 +16,15 @@ describe("SearchBar", () => {
     });
     expect(wrapper.find("input").props().value).toEqual("hello");
   });
+
+  // it("when the form is submitted the event is cancelled", () => {
+  //   const wrapper = shallow(<SearchBar />);
+  //   let prevented = false;
+  //   wrapper.find("form").simulate("submit", {
+  //     preventDefault: () => {
+  //       prevented = true;
+  //     }
+  //   });
+  //   expect(prevented).toBe(true);
+  // });
 });
